@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crown Bar & Restaurant | Hapur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0b0d;--bg2:#131114;--line:#2a2620;--gold:#c9a45c;--gold2:#e6cf9a;--tx:#ece6da;--mut:#9a9186;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px;background:var(--bg)}
+body{background:var(--bg);color:var(--tx);font:300 16px/1.7 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:auto;padding:0 6vw}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(12,11,13,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.28em;color:var(--gold2)}
+.brand svg{width:26px}
+.links{display:flex;gap:30px;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:14px 32px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold2);transition:.3s}
+.btn:hover,.btn.f{background:var(--gold);color:#16120a}
+.btn.f:hover{background:var(--gold2)}
+.hero{position:relative;min-height:calc(100vh - 68px);display:flex;flex-direction:column;justify-content:center;overflow:hidden;
+background:radial-gradient(ellipse 60% 55% at 72% 45%,#3b2d17 0,transparent 70%),radial-gradient(ellipse 50% 50% at 15% 90%,#2a1219 0,transparent 70%),var(--bg)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 60px,#ffffff04 60px 61px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-top:60px;padding-bottom:40px}
+.eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.eyebrow::before{content:"";width:46px;height:1px;background:var(--gold)}
+h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:1.02}
+h1 em{color:var(--gold2)}
+.hero p{max-width:470px;color:var(--mut);margin:24px 0 36px}
+.btns{display:flex;gap:16px;flex-wrap:wrap}
+.emblem{justify-self:center;width:min(340px,70vw);aspect-ratio:1;position:relative;display:grid;place-items:center}
+.emblem::before,.emblem::after{content:"";position:absolute;border:1px solid #c9a45c55;border-radius:50%}
+.emblem::before{inset:0;animation:spin 40s linear infinite;border-style:dashed}
+.emblem::after{inset:9%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.emblem svg{width:52%;filter:drop-shadow(0 0 30px #c9a45c55)}
+.facts{position:relative;border-top:1px solid var(--line);background:#0c0b0dcc}
+.facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));padding-top:0;padding-bottom:0}
+.facts div{padding:22px 10px;text-align:center;border-right:1px solid var(--line)}
+.facts div:last-child{border:0}
+.facts b{display:block;font:500 1.6rem 'Cormorant Garamond',serif;color:var(--gold2)}
+.facts span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+section{padding:100px 0}
+.head{text-align:center;margin-bottom:56px}
+.head .eyebrow{justify-content:center}.head .eyebrow::before{display:none}
+h2{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.frame{aspect-ratio:4/5;border:1px solid var(--line);position:relative;background:linear-gradient(160deg,#2a1d0e,#150f12 60%,#241018);display:grid;place-items:center}
+.frame::before{content:"";position:absolute;inset:14px;border:1px solid #c9a45c44}
+.frame .serif{font-size:2rem;color:var(--gold2);text-align:center;font-style:italic;padding:0 12%;line-height:1.3}
+.about p{color:var(--mut);margin:18px 0}
+.list{display:grid;gap:14px;margin-top:26px}
+.list div{display:flex;gap:14px;align-items:flex-start}
+.list svg{width:22px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.4;margin-top:4px}
+.menu-bg{background:var(--bg2);border-block:1px solid var(--line)}
+.tabs{display:flex;justify-content:center;gap:34px;margin-bottom:46px;flex-wrap:wrap}
+.tabs button{background:none;border:0;border-bottom:1px solid transparent;color:var(--mut);font:400 12px Inter;letter-spacing:.22em;text-transform:uppercase;padding:8px 0;cursor:pointer;transition:.3s}
+.tabs button.on,.tabs button:hover{color:var(--gold2);border-color:var(--gold)}
+.m{display:none;grid-template-columns:1fr 1fr;gap:6px 60px}.m.on{display:grid;animation:fi .5s}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}}
+.it{padding:18px 0;border-bottom:1px solid var(--line)}
+.it h3{font-size:1.45rem;display:flex;align-items:center;gap:12px}
+.it h3 i{font:400 10px Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid #c9a45c66;padding:2px 8px}
+.it p{color:var(--mut);font-size:14px}
+.note{text-align:center;color:var(--mut);font-size:13px;margin-top:34px}
+.rev{text-align:center;max-width:760px;margin:auto}
+.rev .score{font:500 5rem 'Cormorant Garamond',serif;color:var(--gold2);line-height:1}
+.st{color:var(--gold);letter-spacing:6px;margin:6px 0}
+.rev blockquote{font:italic 500 clamp(1.4rem,3.4vw,2rem)/1.4 'Cormorant Garamond',serif;margin:34px 0 10px}
+.rev small{color:var(--mut);letter-spacing:.2em;text-transform:uppercase;font-size:11px}
+.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.visit>div{background:var(--bg);padding:38px 32px}
+.visit h3{font-size:1.6rem;color:var(--gold2);margin-bottom:14px}
+.visit p,.visit li{color:var(--mut);font-size:15px;list-style:none}
+.tag{display:inline-block;border:1px solid var(--line);padding:3px 12px;margin:3px 3px 0 0;font-size:12px;color:var(--tx)}
+.open{color:#7fc79a}
+footer{border-top:1px solid var(--line);padding:46px 0;text-align:center;color:var(--mut);font-size:13px}
+footer .brand{justify-content:center;margin-bottom:12px}
+.rv{opacity:0;transform:translateY(30px);transition:all 1s}.rv.in{opacity:1;transform:none}
+@media(max-width:820px){.links a:not(.btn){display:none}.hero .wrap,.about,.m,.visit{grid-template-columns:1fr}.emblem{order:-1;width:200px}.about .frame{aspect-ratio:16/10}section{padding:70px 0}.facts div{border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="brand" href="#top"><svg viewBox="0 0 100 70"><path d="M8 60L4 18 28 36 50 6 72 36 96 18 92 60Z" fill="none" stroke="#c9a45c" stroke-width="5" stroke-linejoin="round"/></svg>CROWN</a>
+<div class="links"><a href="#about">About</a><a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+<a class="btn" style="padding:10px 20px" href="https://www.google.com/maps/search/?api=1&query=Crown+Bar+and+Restaurant+Hapur" target="_blank">Directions</a></div>
+</div></nav>
+
+<header class="hero" id="top">
+<div class="wrap">
+<div>
+<div class="eyebrow">Bar &amp; Restaurant · Hapur</div>
+<h1>Good food.<br><em>Great mood.</em></h1>
+<p>Flavourful starters, refreshing drinks and a relaxed, premium ambience on Delhi Road. Made for evenings with friends and family.</p>
+<div class="btns"><a class="btn f" href="#menu">Explore Menu</a><a class="btn" href="#visit">Plan Your Visit</a></div>
+</div>
+<div class="emblem"><svg viewBox="0 0 100 70"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f1dca6"/><stop offset="1" stop-color="#a8812f"/></linearGradient></defs>
+<path d="M8 60L4 18 28 36 50 6 72 36 96 18 92 60Z" fill="url(#g)"/><rect x="8" y="62" width="84" height="6" fill="#a8812f"/>
+<circle cx="4" cy="16" r="4" fill="#f1dca6"/><circle cx="50" cy="5" r="4" fill="#f1dca6"/><circle cx="96" cy="16" r="4" fill="#f1dca6"/></svg></div>
+</div>
+<div class="facts"><div class="wrap">
+<div><b>4.2 ★</b><span>Google Rating</span></div>
+<div><b>₹600–1,200</b><span>Per Person</span></div>
+<div><b>12 AM</b><span>Kitchen &amp; Bar Closes</span></div>
+<div><b>Free</b><span>Parking</span></div>
+</div></div>
+</header>
+
+<section id="about"><div class="wrap about rv">
+<div class="frame"><div class="serif">“Treat yourself to a premium dining experience.”</div></div>
+<div>
+<div class="eyebrow">Our Story</div>
+<h2>A relaxed place to celebrate the everyday</h2>
+<p>Crown Bar &amp; Restaurant brings together a great beer selection, cocktails, spirits and a kitchen that serves everything from quick bites to full dinners, in a casual setting that suits groups, birthdays and family evenings.</p>
+<div class="list">
+<div><svg viewBox="0 0 24 24"><path d="M6 3h12l-1 8a5 5 0 0 1-10 0zM12 16v5M8 21h8"/></svg><span>Beer, cocktails, wine &amp; spirits</span></div>
+<div><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></svg><span>Brunch, lunch &amp; dinner with table service</span></div>
+<div><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 14c3 0 6 1.5 6 5"/></svg><span>Perfect for groups &amp; celebrations</span></div>
+</div></div>
+</div></section>
+
+<section id="menu" class="menu-bg"><div class="wrap rv">
+<div class="head"><div class="eyebrow">The Menu</div><h2>Crafted to share</h2></div>
+<div class="tabs"><button class="on" data-t="m1">Starters</button><button data-t="m2">Main Course</button><button data-t="m3">Drinks</button><button data-t="m4">Desserts</button></div>
+<div class="m on" id="m1">
+<div class="it"><h3>Kurkure Momos <i>Signature</i></h3><p>Crisp-coated momos with a spicy kick.</p></div>
+<div class="it"><h3>Paneer Tikka</h3><p>Char-grilled cottage cheese, mint chutney.</p></div>
+<div class="it"><h3>Grilled Chicken</h3><p>Smoky, marinated and tandoor-finished.</p></div>
+<div class="it"><h3>Loaded Fries</h3><p>The perfect companion to a cold beer.</p></div>
+</div>
+<div class="m" id="m2">
+<div class="it"><h3>Dal Makhani</h3><p>Slow-cooked black lentils, served with naan.</p></div>
+<div class="it"><h3>Butter Chicken</h3><p>Tender chicken in a rich tomato-cream gravy.</p></div>
+<div class="it"><h3>Biryani</h3><p>Fragrant basmati layered with spices, with raita.</p></div>
+<div class="it"><h3>Pasta</h3><p>Creamy white or tangy red sauce.</p></div>
+</div>
+<div class="m" id="m3">
+<div class="it"><h3>Draught &amp; Bottled Beer <i>Favourite</i></h3><p>A great selection, served chilled.</p></div>
+<div class="it"><h3>Cocktails</h3><p>Classic and house-style creations.</p></div>
+<div class="it"><h3>Spirits</h3><p>Whisky, vodka, rum and more.</p></div>
+<div class="it"><h3>Wine</h3><p>Red and white by the glass.</p></div>
+</div>
+<div class="m" id="m4">
+<div class="it"><h3>Celebration Cake <i>Popular</i></h3><p>Perfect for birthdays and special evenings.</p></div>
+<div class="it"><h3>Brownie &amp; Ice Cream</h3><p>Warm, rich and indulgent.</p></div>
+</div>
+<p class="note">Sample menu. Please ask the restaurant for the latest items and prices.</p>
+</div></section>
+
+<section id="reviews"><div class="wrap rev rv">
+<div class="eyebrow" style="justify-content:center">Guest Reviews</div>
+<div class="score">4.2</div><div class="st">★★★★☆</div><small>Based on 22 Google reviews</small>
+<blockquote>“Superb services, staff behaviour and food quality.”</blockquote>
+<small>Google review</small>
+</div></section>
+
+<section id="visit" class="menu-bg"><div class="wrap rv">
+<div class="head"><div class="eyebrow">Find Us</div><h2>Visit Crown</h2></div>
+<div class="visit">
+<div><h3>Location</h3><p>Besides Hyundai, Delhi Road,<br>Hapur, Uttar Pradesh 245101</p><p style="margin:10px 0 22px">Plus Code: PPCG+6Q</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Crown+Bar+and+Restaurant+Hapur" target="_blank">Get Directions</a></div>
+<div><h3>Hours</h3><ul><li><span class="open">Open today</span> · closes 12 AM</li><li>Brunch · Lunch · Dinner</li><li>Dine-in · Takeaway · Delivery</li></ul>
+<p style="margin-top:14px">Cards &amp; mobile payments accepted</p></div>
+<div><h3>Amenities</h3><span class="tag">Bar on site</span><span class="tag">Table service</span><span class="tag">Free parking</span><span class="tag">Wheelchair accessible</span><span class="tag">Restroom</span><span class="tag">Groups</span></div>
+</div></div></section>
+
+<footer><div class="wrap"><a class="brand" href="#top">CROWN</a>
+<p>Crown Bar &amp; Restaurant · Delhi Road, Hapur · Instagram @crown_bar_hapur</p>
+<p style="margin-top:8px;font-size:12px">Please drink responsibly. 21+ only.</p></div></footer>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button,.m').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on')});
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
